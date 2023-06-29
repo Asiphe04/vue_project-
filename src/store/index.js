@@ -16,12 +16,12 @@ export default createStore({
   },
   actions: {
     getProduct: async (context, id) => {
-      fetch("http://localhost:3000/products/" + id)
+      fetch("https://asiphe04.github.io/db.json/" + id)
         .then((response) => response.json())
         .then((product) => context.commit("setProduct", product));
     },
     getProducts: async (context) => {
-      fetch("http://localhost:3000/products")
+      fetch("https://asiphe04.github.io/db.json")
         .then((response) => response.json())
         .then((products) => context.commit("setProducts", products));
     },

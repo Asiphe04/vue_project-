@@ -1,12 +1,12 @@
 <template>
    <div v-if="product" class="employee-details">
       <div class="img-container">
-         <img :src="product.img" alt="product.itemName" class="top-picks-img">
+         <img :src="product.img" :alt="product.itemName" class="top-picks-img">
       </div>
       
       <p>{{ product.itemName }}<br/>R{{ product.price }}</p>
       <p>{{ product.desc }}</p>
-      <!-- @click="{{ employee.id }}" -->
+     
       <button class="btn-add-to-cart btn" >Add to Cart</button>
  
       
