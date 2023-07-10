@@ -1,11 +1,25 @@
 <template>
-  <h1>This is admin</h1>
+  <h1>Admin</h1>
+   <div v-if="products">
+   <TableComp v-for="product of products" :key="product.id" :product="product" />
+   </div>
+   <div v-else><h1>Error:404</h1></div>
 
 </template>
 <script>
-export default{
-  
-}
+  import TableComp from "@/components/Table-Comp.vue"
+  export default {
+    computed:{
+      products(){
+        return this.$store.state.products
+      }
+    },
+      mounted(){
+        this.$store.dispatch("getProducts")
+      },
+      components: {TableComp}
+   
+  }
 </script>
 <style>
 
