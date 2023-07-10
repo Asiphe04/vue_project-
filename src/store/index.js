@@ -15,11 +15,6 @@ export default createStore({
     },
   },
   actions: {
-    // getProduct: async (context, id) => {
-    //   fetch("https://asiphe04.github.io/js_eomp/products.json/" + id)
-    //     .then((response) => response.json())
-    //     .then((data) => context.commit("setProduct", data.product));
-    // },
     getProduct: async (context, id) => {
       fetch("https://asiphe04.github.io/js_eomp/products.json")
         .then((res) => res.json())
