@@ -18,12 +18,12 @@ export default createStore({
     getProduct: async (context, id) => {
       fetch("https://asiphe04.github.io/js_eomp/products.json/" + id)
         .then((response) => response.json())
-        .then((product) => context.commit("setProduct", product));
+        .then((data) => context.commit("setProduct", data.product));
     },
     getProducts: async (context) => {
       fetch("https://asiphe04.github.io/js_eomp/products.json")
         .then((response) => response.json())
-        .then((products) => context.commit("setProducts", products));
+        .then((data) => context.commit("setProducts", data.products));
     },
   },
 });
