@@ -15,10 +15,23 @@ export default createStore({
     },
   },
   actions: {
+    // getProduct: async (context, id) => {
+    //   fetch("https://asiphe04.github.io/js_eomp/products.json/" + id)
+    //     .then((response) => response.json())
+    //     .then((data) => context.commit("setProduct", data.product));
+    // },
     getProduct: async (context, id) => {
-      fetch("https://asiphe04.github.io/js_eomp/products.json/" + id)
-        .then((response) => response.json())
-        .then((data) => context.commit("setProduct", data.product));
+      fetch("https://asiphe04.github.io/js_eomp/products.json")
+        .then((res) => res.json())
+        .then(({ products }) => {
+          let product;
+          products.forEach((prod) => {
+            if (prod.id == id) {
+              product = prod;
+            }
+          });
+          context.commit("setProduct", product);
+        });
     },
     getProducts: async (context) => {
       fetch("https://asiphe04.github.io/js_eomp/products.json")

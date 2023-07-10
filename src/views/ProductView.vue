@@ -15,10 +15,13 @@
 </template>
 <script>
 export default{
-    props: ["id"],
-    computed:{
-        product(){
-            return this.$store.state.product;
+    // props: ["id"],
+    computed: {
+        product() {
+            return this.$store.state.product
+        },
+        id(){
+            return this.$route.params.id
         }
     },
     mounted(){
